@@ -1,4 +1,9 @@
 #signature {
     border-style: solid;
     padding: 10 em;
+    background-color: white;
+};
+
+body {
+    background-color: #e8e0be;
 };
