@@ -15,7 +15,11 @@
 <form id="frm1" action="/action_page.php">
   Name: <input type="text" name="name"><br>
   Pronouns (optional): <input type="text" name="pronouns"><br>
-  Position: <input type="text" name="position"><br>
+  Position: <select id="cars" name="cars">
+      <option value="Project Coordinator">Project Coordinator</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option><br>
   Email (leave blank for QSpeak email): <input type="text" name="email"><br>
   Footer (consider adding a Land Acknowledgement): <input type="text" name="footer"><br><br>
   <input type="button" onclick="myFunction()" value="Submit">
