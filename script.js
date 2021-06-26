@@ -29,7 +29,7 @@ function reset () {
   var pronouns = "";
   var position = "";
   var email = "";
-  var footer = "Acknowledging that I live and work in the Dish with One Spoon Territory, the home of the Anishnaabe, Haudenosaunee and Missisaugas of the Credit.";
+  var footer = "Acknowledging that I live and work in the Dish with One Spoon Territory, the home of the Anishnaabe, Haudenosaunee and Mississaugas of the Credit.";
     
   if (pronouns.length > 0) {
     var pro_text = " (".concat(pronouns, ")");
