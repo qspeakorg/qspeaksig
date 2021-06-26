@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>QSpeak Email Signature Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|Playfair+Display" rel="stylesheet">
+
 </head>
 <body>
     
 <script src="script.js"></script>
 
-<h1>Team QSpeak Email Signature Generator</h1>
-<p>Fill in your information and click 'submit' to generate an email signature</p> <br/>
-
-<p> For the footer, consider adding in a Land Acknowledgement. Use <a href="https://native-land.ca/" target="_blank">native-land.ca</a> to find which territorial lands you reside and work on.</p> <br/>
-    
-<form id="frm1" action="/action_page.php">
-  Name: <input type="text" name="name"><br>
-  Pronouns (optional): <input type="text" name="pronouns"><br>
-  Position: <select name="position">
-      <option value="Communications/Outreach">Communications/Outreach</option>
+<div id="presignature">
+    <h1>Team QSpeak Email Signature Generator</h1>
+    <p>Please use a QSpeak Signature if you are sending an email on behalf of QSpeak - even if it is through a personal email!</p>
+    <p> How to set up a QSpeak Email Signature: </p>
+    <ol>
+        <li>Enter your information on the form to the right to modify the email signature. Should you make any errors just hit 'Reset'.</li>
+        <li>For the footer, consider adding in a land acknowledgement. Use <a href="https://native-land.ca/" target="_blank">native-land.ca</a> to find which treaty/territorial lands you reside and work in.</li>
+        <li>Click "Submit" to generate your email signature. Feel free to directly edit your signature as needed.</li>
+        <li>Click "Copy Signature" to add your QSpeak signature to your clipboard.</li>
+    </ol><br>
+</div>
+<div class="flex-container">
+    <div class="form">
+<form id="frm1">
+  Name<br><input type="text" name="name"><br>
+  Pronouns (optional)<br><input type="text" name="pronouns"><br>
+  Position <br><select name="position">
+      <option value="">(None)</option>
+    <option value="Communications/Outreach">Communications/Outreach</option>
       <option value="Program Development">Program Development</option>
       <option value="Graphics">Graphics</option>
       <option value="QSpeak Ambassador">QSpeak Ambassador</option>
       <option value="Project Coordinator">Project Coordinator</option>
     </select><br>
-  Email (leave blank for QSpeak email): <input type="text" name="email"><br>
-  Footer (consider adding a Land Acknowledgement): <input type="text" name="footer"><br><br>
-  <input type="button" onclick="myFunction()" value="Submit">
-</form>
-    
+  Email (leave blank for QSpeak email)<br><input type="text" name="email"><br>
+  Footer (consider adding a Land Acknowledgement)<br><textarea name="footer" style="width:100%; height: 70px" wrap="soft"> </textarea>
+<br><br>
+  <input type="button" id='butt' onclick="myFunction()" value="Submit"> <br>
+</form> <br>
+   <button onclick="reset()" id='butt'>Reset</button> <br><br>
+  <button onclick="copy_sig()" id='butt'>Copy signature</button>
+    </div>
 <div>
   <br>
 </div>
-<div id="signature" dir="ltr" data-smartmail="gmail_signature">
+    
+<div class="signature" dir="ltr" data-smartmail="gmail_signature">
+    <div id="signature_id" contenteditable="true">
   <div dir="ltr">
     <table style="color: #486589; font-family: Montserrat,sans-serif; font-size: 17px;" border="0" width="500" cellspacing="0" cellpadding="0">
       <tbody>
@@ -49,7 +66,7 @@
                       <tbody>
                         <tr>
                           <td>
-                            <div style="font-stretch: normal; font-size: 1.2em; line-height: normal; font-family: Verdana,Geneva,sans-serif;"><div id="name">Team QSpeak</div> <div id="pronouns"></div></div>
+                            <div style="font-stretch: normal; font-size: 1.2em; line-height: normal; font-family: Verdana,Geneva,sans-serif;"><div id="name">Team QSpeak</div></div>
                           </td>
                         </tr>
                         <tr>
@@ -68,8 +85,7 @@
                         <tr>
                           <td>
                             <span style="font-family: Verdana,Geneva,sans-serif; color: #63ccc8;">email:&nbsp;</span>&nbsp;  
-                            <a href="mailto:lgbt.colourfully@gmail.com" id="email" style="background-color: transparent; font-family: Verdana,Geneva,sans-serif; color: #000001;" target="_blank" rel="noopener">lgbt.colourfully@ 
-                              <wbr>gmail.com
+                            <a href="mailto:lgbt.colourfully@gmail.com" id="email" style="background-color: transparent; font-family: Verdana,Geneva,sans-serif; color: #000001;" target="_blank" rel="noopener">lgbt.colourfully@gmail.com
                             </a>
                           </td>
                         </tr>
@@ -130,9 +146,10 @@
     <em id="footer">Acknowledging that I live and work in the Dish with One Spoon Territory, the home of the Anishnaabe, Haudenosaunee and Missisaugas of the Credit.</em> 
     <br>
   </div>
+    </div> <br>
 </div>
+    </div>
 
-    <p> You should be able to copy/paste this right into the email </p>
 
 </body>
 </html>
